@@ -42,3 +42,7 @@
             echo "負";
             break;
     }
+
+    //三元運算子
+
+    echo $x > 0 ? "success":"error" ;
