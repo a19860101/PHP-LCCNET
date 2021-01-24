@@ -21,3 +21,4 @@
     echo "<br>";
     echo $content;
     echo "<br>";
+    echo implode(",",$interest);

@@ -30,6 +30,12 @@
             </select>
         </div>
         <div>
+            <input type="checkbox" name="interest[]" value="吃">
+            <input type="checkbox" name="interest[]" value="喝">
+            <input type="checkbox" name="interest[]" value="玩">
+            <input type="checkbox" name="interest[]" value="樂">
+        </div>
+        <div>
             <textarea name="content" id="" cols="30" rows="10"></textarea>
         </div>
         <input type="submit" value="送出">
