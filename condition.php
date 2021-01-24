@@ -19,3 +19,26 @@
     }else{
         echo "error";
     }
+
+    switch($x){
+        case 0:
+            echo 0;
+            break;
+        case 1:
+            echo 1;
+            break;
+        case 2:
+            echo 2;
+            break;
+        default:
+            echo "error";
+    }
+
+    switch(true){
+        case $x > 0:
+            echo "正";
+            break;
+        case $x < 0:
+            echo "負";
+            break;
+    }
