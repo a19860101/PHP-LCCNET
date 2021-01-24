@@ -22,8 +22,20 @@
     // for($i=0;$i<count($netflix);$i++){
     //     echo $netflix[$i];
     // }
+    // foreach($netflix as $n){
+    //     echo $n;
+    // }
 
-    foreach($netflix as $n){
-        echo $n;
+
+    $users = [
+        "name"  =>  "John",
+        "mail"  =>  "asdf@gmail.com",
+        "phone" =>  "0987654321"
+    ];
+    //key鍵 => value值
+
+    // echo $users["phone"];
+    foreach($users as $key => $value){
+        echo $key.":".$value;
+        echo "<br>";
     }
-
