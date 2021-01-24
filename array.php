@@ -52,14 +52,23 @@
     $books = "精通php mysql ";
     $cartoon = "天竺鼠車車";
     $test = compact("books","cartoon");
-    var_dump($test);
-    
+    // var_dump($test);
+
     // extract()
-    var_dump(extract($users));
-    echo $name;
-    echo $mail;
-    echo $phone;
+    // var_dump(extract($users));
+    // echo $name;
+    // echo $mail;
+    // echo $phone;
     // $name = $users["name"];
     // $mail = $users["mail"];
     // $phone = $users["phone"];
     // echo $name;
+
+    //implode() 陣列轉字串
+    $netflix_string = implode(",", $netflix);
+    // echo $netflix_string;
+    //explode() 字串轉陣列
+    $str = "HELLO WORLD";
+    $str_array = explode("O",$str);
+    var_dump($str_array);
+
