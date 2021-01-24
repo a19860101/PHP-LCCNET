@@ -35,7 +35,31 @@
     //key鍵 => value值
 
     // echo $users["phone"];
-    foreach($users as $key => $value){
-        echo $key.":".$value;
-        echo "<br>";
-    }
+    // foreach($users as $key => $value){
+    //     echo $key.":".$value;
+    //     echo "<br>";
+    // }
+
+    //is_array()
+    // var_dump(is_array($c));
+
+    //in_array();
+    // var_dump(in_array("天竺鼠車車",$c));
+
+    echo count($netflix);
+
+    // compact()
+    $books = "精通php mysql ";
+    $cartoon = "天竺鼠車車";
+    $test = compact("books","cartoon");
+    var_dump($test);
+    
+    // extract()
+    var_dump(extract($users));
+    echo $name;
+    echo $mail;
+    echo $phone;
+    // $name = $users["name"];
+    // $mail = $users["mail"];
+    // $phone = $users["phone"];
+    // echo $name;
