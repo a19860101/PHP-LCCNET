@@ -8,8 +8,8 @@
 <body>
     <form action="store.php" method="post">
         <div>
-            <label for="user">姓名</label>
-            <input type="text" name="user">
+            <label for="name">姓名</label>
+            <input type="text" name="name">
         </div>
         <div>
             <label for="mail">Mail</label>
