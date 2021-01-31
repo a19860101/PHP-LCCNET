@@ -1,8 +1,10 @@
 <?php
     require_once("conn.php");
-    // extract($_GET);
-    $id = $_GET["id"];
-    echo $_GET["id"] ;
+    extract($_GET);
+    // $id = $_GET["id"];
+    $sql = "SELECT * FROM students WHERE id = {$id}";
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_assoc($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,15 +17,15 @@
     <form action="store.php" method="post">
         <div>
             <label for="name">姓名</label>
-            <input type="text" name="name">
+            <input type="text" name="name" value="<?php echo $row["name"];?>">
         </div>
         <div>
             <label for="mail">Mail</label>
-            <input type="text" name="mail">
+            <input type="text" name="mail" value="<?php echo $row["mail"];?>">
         </div>
         <div>
             <label for="phone">電話</label>
-            <input type="text" name="phone">
+            <input type="text" name="phone" value="<?php echo $row["phone"];?>">
         </div>
         <div>
             <label for="gender">性別</label>
@@ -49,7 +51,7 @@
         </div>
         <div>
             <label for="content">備註</label>
-            <textarea name="content" id="" cols="30" rows="10"></textarea>
+            <textarea name="content" id="" cols="30" rows="10"><?php echo $row["content"];?></textarea>
         </div>
         <input type="submit" value="送出">
     </form>
