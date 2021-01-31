@@ -24,6 +24,9 @@
     </style>
 </head>
 <body>
+        <nav>
+            <a href="create.php">建立學員資料</a>
+        </nav>
     <table>
         <tr>
             <th>#</th>
@@ -47,6 +50,7 @@
             <td><?php echo $row["content"];?></td>
         </tr>
         <?php } ?>
+        
 
 
 
