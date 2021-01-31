@@ -35,19 +35,36 @@
             <th>興趣</th>
             <th>備註</th>
         </tr>
+        <?php while($row = mysqli_fetch_assoc($result)){ ?>
+        <tr>
+            <td><?php echo $row["id"];?></td>
+            <td><?php echo $row["name"];?></td>
+            <td><?php echo $row["phone"];?></td>
+            <td><?php echo $row["mail"];?></td>
+            <td><?php echo $row["gender"];?></td>
+            <td><?php echo $row["edu"];?></td>
+            <td><?php echo $row["interest"];?></td>
+            <td><?php echo $row["content"];?></td>
+        </tr>
+        <?php } ?>
+
+
+
+
+
         <?php
-            while($row = mysqli_fetch_assoc($result)){
-                echo "<tr>";
-                echo "<td>{$row["id"]}</td>";
-                echo "<td>".$row["name"]."</td>";
-                echo "<td>".$row["phone"]."</td>";
-                echo "<td>".$row["mail"]."</td>";
-                echo "<td>".$row["gender"]."</td>";
-                echo "<td>".$row["edu"]."</td>";
-                echo "<td>".$row["interest"]."</td>";
-                echo "<td>".$row["content"]."</td>";
-                echo "</tr>";
-            }
+            // while($row = mysqli_fetch_assoc($result)){
+            //     echo "<tr>";
+            //     echo "<td>{$row["id"]}</td>";
+            //     echo "<td>".$row["name"]."</td>";
+            //     echo "<td>".$row["phone"]."</td>";
+            //     echo "<td>".$row["mail"]."</td>";
+            //     echo "<td>".$row["gender"]."</td>";
+            //     echo "<td>".$row["edu"]."</td>";
+            //     echo "<td>".$row["interest"]."</td>";
+            //     echo "<td>".$row["content"]."</td>";
+            //     echo "</tr>";
+            // }
         ?>
     </table>
 </body>
