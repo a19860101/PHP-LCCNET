@@ -46,7 +46,8 @@
             <textarea name="description" id="" cols="30" rows="10"><?php echo $row["description"];?></textarea>
         </div>
         <div>
-            <input type="submit" value="新增商品">
+            <input type="hidden" name="id" value="<?php echo $row["id"];?>">
+            <input type="submit" value="儲存">
         </div>
     </form>
 </body>

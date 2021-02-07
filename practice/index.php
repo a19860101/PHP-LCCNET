@@ -11,6 +11,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .discount {
+            color: #f00;
+            font-size: 30px;
+        }
+    </style>
 </head>
 <body>
     <h1>產品管理系統</h1>
@@ -22,6 +28,7 @@
             <td>#</td>
             <td>產品名稱</td>
             <td>價格</td>
+            <td>折扣後價格</td>
             <td>上架</td>
             <td>數量</td>
             <td>折扣</td>
@@ -32,6 +39,15 @@
             <td><?php echo $row["id"];?></td>
             <td><?php echo $row["title"];?></td>
             <td><?php echo $row["price"];?></td>
+            <td>
+                <?php
+                    if($row["discount"] < 1){
+                        echo "<span class='discount'>".$row["price"] * $row["discount"]."</span>";
+                    }else{
+                        echo $row["price"] * $row["discount"];
+                    }
+                ?>
+            </td>
             <td>
                 <?php echo $row["sale"] == 1 ? "是":"否"; ?>
             </td>
