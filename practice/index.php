@@ -25,6 +25,7 @@
             <td>上架</td>
             <td>數量</td>
             <td>折扣</td>
+            <td>動作</td>
         </tr>
         <?php while($row = mysqli_fetch_assoc($result)){ ?>
         <tr>
@@ -53,6 +54,14 @@
                 }
             
             ?>
+            </td>
+            <td>
+                <form action="delete.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $row["id"];?>">
+                    <input type="submit" value="刪除商品" onclick="return confirm('確認刪除？')">
+                </form>
+
+                <a href="edit.php?id=<?php echo $row["id"];?>">編輯商品</a>
             </td>
         </tr>
         <?php } ?>
