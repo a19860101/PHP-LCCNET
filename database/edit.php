@@ -43,11 +43,14 @@
             </select>
         </div>
         <div>
+            <?php
+                $interest = explode(",", $row["interest"]);
+            ?>
             <label for="interest">興趣</label>
-            <input type="checkbox" name="interest[]" value="吃">吃
-            <input type="checkbox" name="interest[]" value="喝">喝
-            <input type="checkbox" name="interest[]" value="玩">玩
-            <input type="checkbox" name="interest[]" value="樂">樂
+            <input type="checkbox" name="interest[]" value="吃" <?php echo in_array("吃",$interest) ? "checked":""; ?>>吃
+            <input type="checkbox" name="interest[]" value="喝" <?php echo in_array("喝",$interest) ? "checked":""; ?>>喝
+            <input type="checkbox" name="interest[]" value="玩" <?php echo in_array("玩",$interest) ? "checked":""; ?>>玩
+            <input type="checkbox" name="interest[]" value="樂" <?php echo in_array("樂",$interest) ? "checked":""; ?>>樂
         </div>
         <div>
             <label for="content">備註</label>
