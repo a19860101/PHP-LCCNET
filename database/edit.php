@@ -14,7 +14,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="store.php" method="post">
+    <form action="update.php" method="post">
         <div>
             <label for="name">姓名</label>
             <input type="text" name="name" value="<?php echo $row["name"];?>">
@@ -56,6 +56,7 @@
             <label for="content">備註</label>
             <textarea name="content" id="" cols="30" rows="10"><?php echo $row["content"];?></textarea>
         </div>
+        <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
         <input type="submit" value="送出">
     </form>
 </body>
