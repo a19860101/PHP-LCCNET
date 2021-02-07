@@ -3,18 +3,9 @@
     $sql = "SELECT * FROM products";
     $result = mysqli_query($conn,$sql);
 
+    include("template/header.php");
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-</head>
-<body>
+
 <div class="container">
     <div class="row">
         <div class="col-12">
@@ -41,9 +32,9 @@
                 <td>
                     <?php
                         if($row["discount"] < 1){
-                            echo "<span class='badge bg-danger'>".$row["price"] * $row["discount"]."</span>";
+                            echo "<span class='badge bg-danger'>".round($row["price"] * $row["discount"])."</span>";
                         }else{
-                            echo "<span class='badge bg-secondary'>".$row["price"] * $row["discount"]."</span>";
+                            echo "<span class='badge bg-secondary'>".round($row["price"] * $row["discount"])."</span>";
                         }
                     ?>
                 </td>
@@ -87,5 +78,7 @@
     
 
     
-</body>
-</html>
+<?php
+    include("template/footer.php");
+
+?>
