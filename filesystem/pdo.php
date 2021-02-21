@@ -20,15 +20,15 @@
         echo $e->getMessage();
     }
 
-    $sql = "SELECT * FROM test";
-    $res = $pdo -> exec($sql);//mysqli_query($conn,$sql);
-    if($res){
-        var_dump($result);
-    }else{
-        echo $pdo->errorCode();
-        echo "<br>";
-        var_dump($pdo->errorInfo());
-    }
+    // $sql = "SELECT * FROM test";
+    // $res = $pdo -> exec($sql);//mysqli_query($conn,$sql);
+    // if($res){
+    //     var_dump($result);
+    // }else{
+    //     echo $pdo->errorCode();
+    //     echo "<br>";
+    //     var_dump($pdo->errorInfo());
+    // }
 
     // try{
     //     $sql = "SELECT * FROM test";

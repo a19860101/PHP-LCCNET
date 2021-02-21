@@ -1,3 +1,13 @@
+<?php
+    require_once("pdo.php");
+    $sql = "SELECT * FROM galleries";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(); //mysqli_query();
+    while($row = $stmt->fetch()){
+        // var_dump($row);
+        echo $row["name"];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
