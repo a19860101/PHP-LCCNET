@@ -3,9 +3,12 @@
     $sql = "SELECT * FROM galleries";
     $stmt = $pdo->prepare($sql);
     $stmt->execute(); //mysqli_query();
-    while($row = $stmt->fetch()){
-        // var_dump($row);
-        echo $row["name"];
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        // PDO::FETCH_ASSOC
+        // PDO::FETCH_NUM
+        // PDO::FETCH_BOTH
+        var_dump($row);
+        // echo $row["name"];
     }
 ?>
 <!DOCTYPE html>
