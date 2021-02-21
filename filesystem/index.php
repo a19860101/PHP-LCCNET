@@ -19,5 +19,17 @@
         <input type="file" name="gallery">
         <input type="submit" value="上傳">
     </form>
+    <div>
+        <?php
+            $galleries = glob('images/*');
+            var_dump($galleries);
+            foreach($galleries as $g){
+        ?>
+        <div>
+            <a href="<?php echo $g; ?>" target="_blank"><?php echo $g; ?></a>
+            <!-- <img src="<?php #echo $g; ?>" width="200"> -->
+        </div>
+        <?php } ?>
+    </div>
 </body>
 </html>
