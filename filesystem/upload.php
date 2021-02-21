@@ -22,10 +22,24 @@
     // echo "<br>";
     // echo $error;
     // echo "<br>";
-    $gallery_name = time();
+    switch($type){
+        case "image/jpeg":
+            $gallery_name = md5(uniqid()).".jpg";
+            break;
+        case "image/gif":
+            $gallery_name = md5(uniqid()).".gif";
+            break;
+        case "image/png":
+            $gallery_name = md5(uniqid()).".png";
+            break;
+        default:
+            header("location:index.php?error=1");
+    }
+
+    $target = "images/".$gallery_name;
 
     if($error == 0){
-        if(move_uploaded_file($tmp_name,"images/".$name)){
+        if(move_uploaded_file($tmp_name,$target)){
             echo "上傳成功";
         }else{
             echo "上傳失敗";
