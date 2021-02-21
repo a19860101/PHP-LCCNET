@@ -36,18 +36,23 @@
     //         header("location:index.php?error=1");
     // }
     
-    $ext = pathinfo($name,PATHINFO_EXTENSION);
-    // if($ext != "jpg" $ext != "gif" $ext != "png"){
-    //     header("location:index.php?error=1");
-    //     return;
-    // }
-    echo $ext;
+    $ext = strtolower(pathinfo($name,PATHINFO_EXTENSION));
+    if($ext != "jpg" && $ext != "jpeg" && $ext != "gif" && $ext != "png"){
+        header("location:index.php?error=2");
+        return;
+    }
+
     $gallery_name = md5(uniqid()).".".$ext;
     $target = "images/".$gallery_name;
+
+    if(!is_dir("images")){
+        mkdir("images");
+    }
 
     if($error == 0){
         if(move_uploaded_file($tmp_name,$target)){
             echo "上傳成功";
+            header("Refresh:1;url=index.php");
         }else{
             echo "上傳失敗";
         }
