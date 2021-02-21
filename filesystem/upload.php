@@ -22,6 +22,7 @@
     // echo "<br>";
     // echo $error;
     // echo "<br>";
+    $gallery_name = time();
 
     if($error == 0){
         if(move_uploaded_file($tmp_name,"images/".$name)){

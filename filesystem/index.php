@@ -7,6 +7,14 @@
     <title>Document</title>
 </head>
 <body>
+    <?php 
+        // echo md5('12asdg@)asdlkj;lopqfd1345');
+        // echo time(); 
+        // echo md5(time());    
+        // echo sha1(time()); 
+        // echo uniqid();
+        // echo md5(uniqid());
+    ?>
     <form action="upload.php" method="post" enctype="multipart/form-data">
         <input type="file" name="gallery">
         <input type="submit" value="上傳">
