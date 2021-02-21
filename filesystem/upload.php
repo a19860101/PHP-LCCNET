@@ -22,20 +22,27 @@
     // echo "<br>";
     // echo $error;
     // echo "<br>";
-    switch($type){
-        case "image/jpeg":
-            $gallery_name = md5(uniqid()).".jpg";
-            break;
-        case "image/gif":
-            $gallery_name = md5(uniqid()).".gif";
-            break;
-        case "image/png":
-            $gallery_name = md5(uniqid()).".png";
-            break;
-        default:
-            header("location:index.php?error=1");
-    }
-
+    // switch($type){
+    //     case "image/jpeg":
+    //         $gallery_name = md5(uniqid()).".jpg";
+    //         break;
+    //     case "image/gif":
+    //         $gallery_name = md5(uniqid()).".gif";
+    //         break;
+    //     case "image/png":
+    //         $gallery_name = md5(uniqid()).".png";
+    //         break;
+    //     default:
+    //         header("location:index.php?error=1");
+    // }
+    
+    $ext = pathinfo($name,PATHINFO_EXTENSION);
+    // if($ext != "jpg" $ext != "gif" $ext != "png"){
+    //     header("location:index.php?error=1");
+    //     return;
+    // }
+    echo $ext;
+    $gallery_name = md5(uniqid()).".".$ext;
     $target = "images/".$gallery_name;
 
     if($error == 0){
