@@ -27,6 +27,11 @@
         ?>
         <div>
             <a href="<?php echo $g; ?>" target="_blank"><?php echo $g; ?></a>
+            <form action="delete.php" method="post">
+                <input type="hidden" name="g" value="<?php echo $g;?>">
+                <input type="submit" value="刪除" onclick="return confirm('確認刪除?')">
+
+            </form>
             <!-- <img src="<?php #echo $g; ?>" width="200"> -->
         </div>
         <?php } ?>
