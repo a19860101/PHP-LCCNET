@@ -11,7 +11,6 @@
     // echo "<br>";
     // echo $_FILES["gallery"]["error"];
     // echo "<br>";
-
     extract($_FILES["gallery"]);
     // echo $name;
     // echo "<br>";
@@ -49,15 +48,16 @@
     if(!is_dir("images")){
         mkdir("images");
     }
-
+    // $sql = "INSERT INTO galleries (gallery_name, name, created_at)VALUES(?,?,NOW())";
     $sql = "INSERT INTO galleries (gallery_name, name, created_at)VALUES(?,?,?)";
     $stmt = $pdo->prepare($sql);
+    date_default_timezone_set("Asia/Taipei");
+    $now = date("Y-m-d H:i:s");
     
-
     if($error == 0){
         if(move_uploaded_file($tmp_name,$target)){
             echo "上傳成功";
-            $stmt->execute([$gallery_name,$name,NOW()]);
+            $stmt->execute([$gallery_name,$name,$now]);
             header("Refresh:1;url=index.php");
         }else{
             echo "上傳失敗";
