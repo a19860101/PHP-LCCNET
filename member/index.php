@@ -12,7 +12,7 @@
 <body>
     <nav>
         <?php if(isset($_SESSION["AUTH"])){ ?>
-            <a href="#">登出</a>
+            <a href="logout.php">登出</a>
         <?php }else{ ?>
             <a href="login.php">登入</a>
             <a href="#">註冊會員</a>
