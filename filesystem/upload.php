@@ -1,4 +1,5 @@
 <?php
+    require_once("pdo.php");
     // var_dump($_FILES["gallery"]["name"]);
     // echo $_FILES["gallery"]["name"];
     // echo "<br>";
@@ -49,9 +50,14 @@
         mkdir("images");
     }
 
+    $sql = "INSERT INTO galleries (gallery_name, name, created_at)VALUES(?,?,?)";
+    $stmt = $pdo->prepare($sql);
+    
+
     if($error == 0){
         if(move_uploaded_file($tmp_name,$target)){
             echo "上傳成功";
+            $stmt->execute([$gallery_name,$name,NOW()]);
             header("Refresh:1;url=index.php");
         }else{
             echo "上傳失敗";
