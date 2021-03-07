@@ -1,4 +1,5 @@
 <?php
+    try {
     require_once("pdo.php");
     // var_dump($_FILES["gallery"]["name"]);
     // echo $_FILES["gallery"]["name"];
@@ -65,4 +66,7 @@
     }else{
         echo "上傳錯誤.";
     }
+}catch(PDOException $e){
+    echo $e->getMessage();
+}
 
