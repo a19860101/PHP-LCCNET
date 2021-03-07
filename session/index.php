@@ -9,10 +9,13 @@
 <body>
 <?php 
     session_start();
-    echo $_SESSION["USER"];
+    echo $_SESSION["AUTH"]["user"];
+    echo "<br>";
+    echo $_SESSION["AUTH"]["mail"];
 ?>
     <form action="response.php" method="post">
         <input type="text" name="user">
+        <input type="text" name="mail">
         <input type="submit" >
     </form>
 </body>
