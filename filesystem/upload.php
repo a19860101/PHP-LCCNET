@@ -51,14 +51,21 @@
     }
     // $sql = "INSERT INTO galleries (gallery_name, name, created_at)VALUES(?,?,NOW())";
     $sql = "INSERT INTO galleries (gallery_name, name, created_at)VALUES(?,?,?)";
+    // $sql = "INSERT INTO galleries (gallery_name, name, created_at)VALUES(:gallery_name,:name,:created_at)";
+    
+
     $stmt = $pdo->prepare($sql);
-    date_default_timezone_set("Asia/Taipei");
-    $now = date("Y-m-d H:i:s");
+    // $stmt->bindParam(":gallery_name",$gallery_name);
+    // $stmt->bindParam(":name",$name);
+    // $stmt->bindParam(":created_at",$now);
+    
+    
     
     if($error == 0){
         if(move_uploaded_file($tmp_name,$target)){
             echo "上傳成功";
             $stmt->execute([$gallery_name,$name,$now]);
+            // $stmt->execute();
             header("Refresh:1;url=index.php");
         }else{
             echo "上傳失敗";

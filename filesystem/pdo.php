@@ -7,7 +7,8 @@
 
     $dsn = "mysql:host={$db_host};dbname={$db_name};charset={$db_charset}";
     // $pdo = new PDO($dsn,$db_user,$db_pw);//建立PDO實體
-
+    date_default_timezone_set("Asia/Taipei");
+    $now = date("Y-m-d H:i:s");
     //例外處理 錯誤觸理
     try {
         $pdo = new PDO($dsn,$db_user,$db_pw);
