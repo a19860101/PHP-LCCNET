@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-03-14 03:11:38
+-- 產生時間： 2021-03-14 05:04:18
 -- 伺服器版本： 10.4.17-MariaDB
 -- PHP 版本： 7.4.15
 
@@ -24,6 +24,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- 資料表結構 `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(10) NOT NULL,
+  `slug` varchar(10) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- 資料表結構 `galleries`
 --
 
@@ -32,6 +46,22 @@ CREATE TABLE `galleries` (
   `gallery_name` varchar(100) NOT NULL,
   `name` varchar(100) NOT NULL,
   `created_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `posts`
+--
+
+CREATE TABLE `posts` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(30) NOT NULL,
+  `content` text NOT NULL,
+  `user_id` int(10) NOT NULL,
+  `category_id` int(10) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -55,16 +85,28 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `user`, `pw`, `role`, `created_at`) VALUES
 (1, 'admin', 'admin', 0, '2021-03-07 14:30:07'),
 (2, 'banana', 'banana', 1, '2021-03-07 16:18:40'),
-(5, 'apple', 'apple', 1, '2021-03-07 16:35:03');
+(5, 'apple', 'apple', 0, '2021-03-07 16:35:03');
 
 --
 -- 已傾印資料表的索引
 --
 
 --
+-- 資料表索引 `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- 資料表索引 `galleries`
 --
 ALTER TABLE `galleries`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `posts`
+--
+ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -78,9 +120,21 @@ ALTER TABLE `users`
 --
 
 --
+-- 使用資料表自動遞增(AUTO_INCREMENT) `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- 使用資料表自動遞增(AUTO_INCREMENT) `galleries`
 --
 ALTER TABLE `galleries`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `posts`
+--
+ALTER TABLE `posts`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
