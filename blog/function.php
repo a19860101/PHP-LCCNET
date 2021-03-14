@@ -23,19 +23,22 @@
         extract($request);
         $user_id = 1;
         $category_id = 1;
-        //key
+        #key#
+        ###################################
         $k = array_keys($request);
         array_push($k,"user_id","category_id","created_at","updated_at");
         $k = implode(",",$k);
         // var_dump($k);
         // echo $k;
 
-        //value
+        #value#
+       ###################################
         $v = explode(",",implode(",",$request));
         array_push($v,$user_id,$category_id,$now,$now);
         // var_dump($v);
 
-        //問號
+        #問號#
+        ###################################
         $q = implode(",",array_map(function(){
             return "?";
         },$v));
@@ -49,7 +52,19 @@
         $stmt = $pdo->prepare($sql);
         $stmt->execute($v);
     }
-    function deletePost(){}
-    function updatePost(){}
+    function deletePost($id){
+        require("pdo.php");
+        
+        $sql = "DELETE FROM posts WHERE id = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$id]);
+    }
+    function updatePost($request){
+        require("pdo.php");
+        extract($request);
+        $sql = "UPDATE posts SET title=?,content=?,category_id=?,updated_at=? WHERE id = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$title,$content,$category_id,$now]);
+    }
 
 
