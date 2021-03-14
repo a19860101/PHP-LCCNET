@@ -37,6 +37,9 @@
                 }
             ?>
         </td>
+        <td>
+            <a href="switch_role.php?role=<?php echo $row["role"];?>&id=<?php echo $row["id"];?>" >切換權限</a>
+        </td>
     </tr>
     <?php } ?>
     </table>
