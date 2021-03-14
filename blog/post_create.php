@@ -13,10 +13,6 @@
             <input type="text" name="title">
         </div>
         <div>
-            <label for="">Mail</label>
-            <input type="text" name="mail">
-        </div>
-        <div>
             <label for="">內容</label>
             <textarea name="content" id="" cols="30" rows="10"></textarea>
         </div>
