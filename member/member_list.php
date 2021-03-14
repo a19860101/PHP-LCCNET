@@ -38,7 +38,11 @@
             ?>
         </td>
         <td>
-            <a href="switch_role.php?role=<?php echo $row["role"];?>&id=<?php echo $row["id"];?>" >切換權限</a>
+            <?php if($row["id"] == $_SESSION["AUTH"]["id"]){?>
+                <span style="color:#ccc">切換權限</span>
+            <?php }else{ ?>
+                <a href="switch_role.php?role=<?php echo $row["role"];?>&id=<?php echo $row["id"];?>" >切換權限</a>
+            <?php } ?>
         </td>
     </tr>
     <?php } ?>
