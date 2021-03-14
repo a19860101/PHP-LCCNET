@@ -1,6 +1,10 @@
 <?php
+session_start();
+    if($_SESSION["AUTH"]["role"] != 0 || !isset($_SESSION["AUTH"])){
+        header("location:index.php");
+    }
     try {
-        session_start();
+        
         require_once("pdo.php");
         $sql = "SELECT * FROM users";
         $stmt = $pdo->prepare($sql);;
