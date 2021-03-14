@@ -18,11 +18,14 @@
         $row = $stmt->fetch();
         return $row;
     }
-    function storePost(){
+    function storePost($request){
         require("pdo.php");
-        $sql = "INSERT INTO posts(title,content,user_id,categories_id,created_at,updated_at)VALUES(?,?,?,?,?,?)";
+        extract($request);
+        $user_id = 1;
+        $category_id = 1;
+        $sql = "INSERT INTO posts(title,content,user_id,category_id,created_at,updated_at)VALUES(?,?,?,?,?,?)";
         $stmt = $pdo->prepare($sql);
-        $stmt -> execute([$title,$content,$user_id,$categories_id,$now,$now]);
+        $stmt -> execute([$title,$content,$user_id,$category_id,$now,$now]);
     }
     function deletePost(){}
     function updatePost(){}
