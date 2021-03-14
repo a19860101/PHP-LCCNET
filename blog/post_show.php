@@ -26,6 +26,11 @@
             更新時間<?php echo $post["updated_at"];?>
         </div>
         <a href="index.php">文章列表</a>
+        <a href="#">編輯文章</a>
+        <form action="post_delete.php" method="post">
+            <input type="hidden" name="id" value="<?php echo $post["id"];?>">
+            <input type="submit" value="刪除文章" onclick="return confirm('確認刪除文章？')">
+        </form>
     </div>
 </body>
 </html>
