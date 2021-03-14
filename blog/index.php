@@ -22,6 +22,9 @@
                     <?php echo $post["content"];?>
                 </div>
                 <div>
+                    <a href="post_show.php?id=<?php echo $post["id"];?>">繼續閱讀</a>
+                </div>
+                <div>
                     建立時間<?php echo $post["created_at"];?>
                 </div>
             </div>
