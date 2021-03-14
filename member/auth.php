@@ -12,7 +12,7 @@
             return ;
         }
         if($row["pw"] == $pw){
-            $_SESSION["AUTH"] = $_POST;
+            $_SESSION["AUTH"] = $row;
             echo "登入成功";
             header("Refresh:1;url=index.php");
         }else{

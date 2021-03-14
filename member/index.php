@@ -13,6 +13,9 @@
     <nav>
         <?php if(isset($_SESSION["AUTH"])){ ?>
             <a href="logout.php">登出</a>
+            <?php if($_SESSION["AUTH"]["role"] == 0){ ?>
+            <a href="#">會員列表</a>
+            <?php } ?>
         <?php }else{ ?>
             <a href="login.php">登入</a>
             <a href="register.php">註冊會員</a>
