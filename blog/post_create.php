@@ -1,3 +1,7 @@
+<?php
+    include("function.php");
+    $cates = showAllCategories();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +15,14 @@
         <div>
             <label for="">文章標題</label>
             <input type="text" name="title">
+        </div>
+        <div>
+            <label for="">文章分類</label>
+            <select name="category_id" id="">
+                <?php foreach($cates as $cate){ ?>
+                <option value="<?php echo $cate["id"];?>"><?php echo $cate["title"];?></option>
+                <?php } ?>
+            </select>
         </div>
         <div>
             <label for="">內容</label>
