@@ -13,6 +13,7 @@
 <body>
     <nav>
         <a href="post_create.php">新增文章</a>
+        <a href="category_create.php">新增分類</a>
     </nav>
     <div>
         <?php foreach($posts as $post){ ?>

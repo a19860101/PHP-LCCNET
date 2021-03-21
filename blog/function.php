@@ -68,4 +68,22 @@
         $stmt->execute([$title,$content,$category_id,$now,$id]);
     }
 
+    function showAllCategories(){
+        require("pdo.php");
+        $sql = "SELECT * FROM categories";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $rows = array();
+        while($row = $stmt->fetch()){
+            $rows[] = $row;
+        }
+        return $rows;
+    }
+    function storeCategory($request){
+        require("pdo.php");
+        extract($request);
 
+        $sql = "INSERT INTO categories(title,slug,created_at,updated_at)VALUES(?,?,?,?)";
+        $stmt = $pdo->prepare($sql);
+        $stmt -> execute([$title,$slug,$now,$now]);
+    }
