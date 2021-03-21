@@ -1,3 +1,8 @@
+<?php
+    include("function.php");
+    $cates = showAllCategories();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,5 +23,16 @@
         </div>
         <input type="submit" value="新增">
     </form>
+    <ul>
+    <?php foreach($cates as $cate){ ?>
+        <li>
+            <?php echo $cate["title"];?>
+            <form action="category_delete.php" method="post">
+                <input type="hidden" name="id" value=<?php echo $cate["id"];?>>
+                <input type="submit" value="刪除分類" onclick="return confirm('確認刪除?')">
+            </form>
+        </li>
+    <?php } ?>
+    </ul>
 </body>
 </html>

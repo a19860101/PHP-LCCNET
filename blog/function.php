@@ -87,3 +87,10 @@
         $stmt = $pdo->prepare($sql);
         $stmt -> execute([$title,$slug,$now,$now]);
     }
+    function deleteCategory($id){
+        require("pdo.php");
+        
+        $sql = "DELETE FROM categories WHERE id = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$id]);
+    }

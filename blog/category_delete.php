@@ -1,4 +1,5 @@
 <?php
     include("function.php");
-    storeCategory($_POST);
+    deleteCategory($_POST["id"]);
+
     header("location:category_create.php");
