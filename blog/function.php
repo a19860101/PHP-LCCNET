@@ -1,7 +1,10 @@
 <?php
     function showAllPosts(){
         require("pdo.php");
-        $sql = "SELECT posts.*,categories.title AS c_title FROM posts LEFT JOIN categories ON categories.id = posts.category_id";
+        $sql = "SELECT posts.*,users.user,categories.title AS c_title FROM posts 
+                LEFT JOIN categories ON categories.id = posts.category_id 
+                LEFT JOIN users ON users.id = posts.user_id
+                ";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $rows = array();
@@ -19,9 +22,10 @@
         return $row;
     }
     function storePost($request){
+        session_start();
         require("pdo.php");
         extract($request);
-        $user_id = 1;
+        $user_id = $_SESSION["AUTH"]["id"];
         #key#
         ###################################
         // $k = array_keys($request);
