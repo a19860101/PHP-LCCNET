@@ -15,10 +15,11 @@
     <nav>
         <a href="post_create.php">新增文章</a>
         <a href="category_create.php">新增分類</a>
-        <?php if(!isset($_SESSION)){ ?>
+        <?php if(!isset($_SESSION["AUTH"])){ ?>
         <a href="user_create.php">會員註冊</a>
         <a href="user_login.php">登入</a>
         <?php }else{ ?>
+       
         <a href="logout.php">登出</a>
         <?php } ?>
     </nav>
