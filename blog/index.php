@@ -14,6 +14,9 @@
     <nav>
         <a href="post_create.php">新增文章</a>
         <a href="category_create.php">新增分類</a>
+        <a href="user_create.php">會員註冊</a>
+        <a href="user_login.php">登入</a>
+        <a href="logout.php">登出</a>
     </nav>
     <div>
         <?php foreach($posts as $post){ ?>
