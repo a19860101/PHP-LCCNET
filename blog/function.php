@@ -1,7 +1,7 @@
 <?php
     function showAllPosts(){
         require("pdo.php");
-        $sql = "SELECT * FROM posts";
+        $sql = "SELECT * FROM posts LEFT JOIN categories ON categories.id = posts.category_id";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $rows = array();
