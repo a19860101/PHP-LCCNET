@@ -62,9 +62,10 @@
     function updatePost($request){
         require("pdo.php");
         extract($request);
+        $category_id = 1;
         $sql = "UPDATE posts SET title=?,content=?,category_id=?,updated_at=? WHERE id = ?";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute([$title,$content,$category_id,$now]);
+        $stmt->execute([$title,$content,$category_id,$now,$id]);
     }
 
 
