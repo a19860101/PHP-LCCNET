@@ -4,6 +4,7 @@
         $sql = "SELECT posts.*,users.user,categories.title AS c_title FROM posts 
                 LEFT JOIN categories ON categories.id = posts.category_id 
                 LEFT JOIN users ON users.id = posts.user_id
+                ORDER BY updated_at DESC
                 ";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();

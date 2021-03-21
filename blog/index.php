@@ -19,7 +19,11 @@
         <a href="user_login.php">登入</a>
         <?php }else{ ?>
         <a href="post_create.php">新增文章</a>
+        
+        <?php if($_SESSION["AUTH"]["role"] == 0){ ?>
         <a href="category_create.php">新增分類</a>
+        <?php } ?>
+        
         <a href="logout.php">登出</a>
         <?php } ?>
     </nav>
