@@ -1,31 +1,28 @@
 <?php
-    class USER {
-        public $asdf;
-        function asdf(){
-            
+    class User {
+        public $a = 10;
+        private $b = 99;
+        protected $c =100;
+
+        function test(){
+            return $this->c;
         }
     }
-    class Person {
-        public $hairColor = 'black';
-        public $skin = 'black';
-        public $eye;
 
-        function run(){}
-        function test1(){}
-        function test2(){}
-        function test3(){}
-        function test4(){}
-    }
-    class Dog {
-        public $hairColor;
-        public $hairColor;
-        public $hairColor;
-        public $hairColor;
-        function run(){}
+    class Member extends User{
+        function test(){
+            return $this->c;
+        }
     }
 
-    $john = new Person;
-    $john->run();
+    $john = new User;
+    // echo $john->a;
+    // echo $john->b;
+    // echo $john->c;
 
-    $lucky = new Dog;
-    $lucky->run();
+    // echo $john->test();
+
+    $mary = new Member;
+
+    // echo $mary->c;
+    echo $mary->test();
