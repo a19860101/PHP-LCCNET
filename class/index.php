@@ -7,6 +7,11 @@
         function test(){
             return $this->c;
         }
+
+        static function title($x){
+            return 'HELLO '.$x;
+        }
+
     }
 
     class Member extends User{
@@ -26,3 +31,6 @@
 
     // echo $mary->c;
     echo $mary->test();
+
+
+    echo User::title('Laravel');
